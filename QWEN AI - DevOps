@@ -1,0 +1,18 @@
+
+🚀 Qwen – AI Assistant for Coding & DevOps
+
+Qwen is purpose-built for development and operations, giving engineers powerful automation capabilities with direct CLI access.
+
+🔑 Key Highlights
+
+⚡ Direct Command Execution
+Executes commands directly in your environment without extra wrappers.
+
+🔗 MCP Integration
+Works out of the box with MCP (Model Context Protocol) for safe and structured tool access.
+
+🛠️ Specialized Agents
+Supports task-specific agents (e.g., CI/CD, monitoring, infrastructure, debugging).
+
+🧠 Adaptive Model Switching
+Dynamically switches between models based on task complexity for optimal performance.
