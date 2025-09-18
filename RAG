@@ -100,5 +100,42 @@ It combines **natural context segmentation** with **redundancy at chunk edges**,
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+Solution 2 :  Metadata filtering = narrowing retrieval search by applying filters on document metadata (source, type, date, tags, etc.), 
+so the model only looks at the most relevant knowledge.
+📘 Real-World Example
 
+Imagine a company has:
 
+Internal HR policies (tag: HR)
+
+Technical product manuals (tag: TECH)
+
+Customer support FAQs (tag: SUPPORT)
+
+If a DevOps engineer asks about “scaling in Kubernetes”, you don’t want HR policies being searched. Metadata filtering ensures only TECH docs are considered.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+🔍 Query Enhancement in RAG
+📘 What it is
+
+Query Enhancement = Improving or transforming the user’s original query before running retrieval.
+The idea is to make the query more precise, descriptive, or semantically rich so that the retriever fetches better context chunks.
+📊 Example
+User query:
+
+"Pod scaling"
+
+Without Enhancement (retrieval might fail)
+
+Retrieves chunks about "pod" in biology, podcasts, etc.
+
+With Enhancement
+
+Enhanced query: "How do I scale a Kubernetes Deployment to increase the number of Pods in production cluster?"
+
+Retrieves chunks:
+
+"Deployments help you scale Pods up or down" ✅
+
+"Horizontal Pod Autoscaler automatically adjusts replicas" ✅
+-----------------------------------------------------------------------------------------------------------------------
