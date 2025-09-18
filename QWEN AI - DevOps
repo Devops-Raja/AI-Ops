@@ -1,4 +1,8 @@
+Qwen is AI tool for learning how to integrate AI powered tools with infrastructure. 
+Qwen can easily be substituted with Claude Code, Gemini CLI, or any other CLI tools and frameworks available today.
 
+It is important to remember that using public AI APIs may not be the best use case in production, especially when security is of prime importance. 
+These tools are specifically selected for the lab to provide a great experience while you learn the underlying concepts while ensuring fair usage to competent models.
 🚀 Qwen – AI Assistant for Coding & DevOps
 
 Qwen is purpose-built for development and operations, giving engineers powerful automation capabilities with direct CLI access.
