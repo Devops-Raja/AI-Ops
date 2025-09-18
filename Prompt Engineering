@@ -71,3 +71,18 @@ Refine iteratively
 Demand verification
 
 This ensures safe, reliable, and efficient collaboration with AI in DevOps workflows.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+HANDS ON DONE.
+
+1. Issue: Authentication error to Front end
+Solution: 
+Prompeted QWEN AI to check the pods, Events and k8 Secrets to debug the issue.
+Find the issue >> Fix it if needed.
+Issue resolved
+
+2. Issue: Front end not able to connect with Backend services.
+
+Solution: Network policy's in the specfic name space is denying all the traffics.
+Prompted QWEN AI to fix and resolve the issue.
+
