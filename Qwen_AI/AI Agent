@@ -1,0 +1,49 @@
+- AI AGENTS which as a devops team member
+
+Need to install the QWEN agents via script.
+eg:
+
+echo "Verifying agent installation..."
+if [ -f ~/.qwen/agents/docker-optimizer.md ] && [ -f ~/.qwen/agents/terraform-security.md ]; then
+    echo "✅ All agents successfully installed!"
+    echo ""
+    echo "Available agents:"
+    echo "  🐳 docker-optimizer    - Optimizes Docker images for ECR"
+    echo "  🔒 terraform-security  - Scans Terraform for security issues"
+else
+    echo "❌ Error: Some agents failed to install"
+    exit 1
+fi
+
+echo ""
+echo "========================================="
+echo "Setup Complete!"
+===================================================================================================================================================
+--> What the Script Does
+Creates the ~/.qwen/agents directory
+Clears any existing agents to prevent duplicates
+Copies the docker-optimizer.md agent file
+Copies the terraform-security.md agent file
+Verifies successful installation
+===================================================================================================================================================
+Key points
+Subagents are specialists - Each focuses on one domain
+Easy to create - Just markdown files with YAML headers
+Reusable expertise - Use same agents across all projects
+Independent contexts - Agents work without interfering
+Automated best practices - Consistent quality every time
+================================
+
+Qwen Sub-Agents = Specialized AI units:
+
+DevOps Agent → Infra & CI/CD
+
+Coding Agent → Code generation & debugging
+
+Cloud Agent → CloudOps + IaC
+
+Knowledge Agent → Docs & best practices
+
+ETC.......
+
+

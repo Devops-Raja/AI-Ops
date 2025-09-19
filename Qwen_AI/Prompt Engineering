@@ -1,0 +1,88 @@
+🧩 Prompting Best Practices for DevOps AI Agents
+1. 🎯 Context-First Prompting
+
+Always provide rich context instead of vague requests.
+
+❌ Bad Example:
+
+Fix my Kubernetes error
+
+
+✅ Good Example:
+
+Pod payment-service in namespace production showing ImagePullBackOff, 
+using ECR registry, k8s 1.28
+
+2. 🗂️ Structured Requests
+
+For complex tasks, follow a structured request format:
+
+Analyze: [what to examine]
+
+Context: [environment details]
+
+Goal: [desired outcome]
+
+Constraints: [limitations/requirements]
+
+👉 Example:
+
+Analyze: Pod startup failures
+Context: k8s 1.28, production namespace, ECR images
+Goal: Fix ImagePullBackOff error
+Constraints: No cluster restarts, minimal downtime
+
+3. 🔄 Iterative Refinement
+
+Break problems into progressive steps:
+
+First:
+
+Check pod status in production
+
+
+Then:
+
+Show events for failing pods
+
+
+Finally:
+
+Decode the secret payment-db-secret and verify base64 encoding
+
+4. ✅ Verification Prompting
+
+Always verify before execution to prevent risky actions.
+
+👉 Example:
+
+Show me the command you'll run 
+and explain what it does before executing
+
+
+⚡ Summary:
+
+Provide context
+
+Use structured format
+
+Refine iteratively
+
+Demand verification
+
+This ensures safe, reliable, and efficient collaboration with AI in DevOps workflows.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+HANDS ON DONE.
+
+1. Issue: Authentication error to Front end
+Solution: 
+Prompeted QWEN AI to check the pods, Events and k8 Secrets to debug the issue.
+Find the issue >> Fix it if needed.
+Issue resolved
+
+2. Issue: Front end not able to connect with Backend services.
+
+Solution: Network policy's in the specfic name space is denying all the traffics.
+Prompted QWEN AI to fix and resolve the issue.
+

@@ -1,0 +1,141 @@
+RAG = Retrieval-Augmented Generation
+
+It’s an AI architecture pattern that improves Large Language Models (LLMs) by giving them access to 
+external knowledge sources (like databases, documents, or APIs) during response generation.
+
+--------------------------------------
+Working Process :
+1.User Query:
+You ask the model a question.
+
+2.Retrieval:
+The system searches external sources (e.g., vector database, knowledge base, PDFs, APIs) to fetch relevant context.
+
+3.Augmentation:
+The retrieved context is fed into the LLM as extra input (prompt enrichment).
+
+4.Generation:
+The LLM uses both its training knowledge + retrieved context to generate a more accurate, up-to-date, and grounded answer.
+
+---------------------------------------------
+Hands ON Done-->
+
+Improve the RAG accuracy and efficiency.
+- Improve existing  the RAG system of Accuracy 45 % to 90 %
+
+-- Improve the rag system.py scripts by below
+
+-- Using chunking Stratergy - Semantic + Overlap 
+
+
+-----------------------
+# 📘 Chunking Strategies in RAG
+
+This document explains different **chunking strategies** used in **RAG (Retrieval-Augmented Generation)** with examples.  
+
+---
+
+## 📄 Example Text
+> "In Kubernetes, a Pod is the smallest deployable unit. Pods can host one or more containers that share storage and networking. Deployments help manage Pods by scaling them up or down. Services expose Pods to external traffic."
+
+---
+
+## 1. Fixed-size (e.g., 10 words each) ❌
+Chunk 1: "In Kubernetes, a Pod is the smallest deployable unit. Pods"
+Chunk 2: "can host one or more containers that share storage and"
+Chunk 3: "networking. Deployments help manage Pods by scaling them up"
+Chunk 4: "or down. Services expose Pods to external traffic."
+
+yaml
+Copy code
+- ⚠️ Cuts sentences awkwardly → context lost.
+
+---
+
+## 2. Sentence-level ⚖️
+Chunk 1: "In Kubernetes, a Pod is the smallest deployable unit."
+Chunk 2: "Pods can host one or more containers that share storage and networking."
+Chunk 3: "Deployments help manage Pods by scaling them up or down."
+Chunk 4: "Services expose Pods to external traffic."
+
+yaml
+Copy code
+- ✅ Clear sentences  
+- ❌ May miss multi-sentence context.
+
+---
+
+## 3. Semantic (Paragraph-based) ✅
+Chunk 1: "In Kubernetes, a Pod is the smallest deployable unit.
+Pods can host one or more containers that share storage and networking."
+Chunk 2: "Deployments help manage Pods by scaling them up or down.
+Services expose Pods to external traffic."
+
+yaml
+Copy code
+- ✅ Keeps related ideas together  
+- ❌ Boundaries may still drop context.
+
+---
+
+## 4. Semantic + Overlap (Best) 🏆
+Chunk 1: "In Kubernetes, a Pod is the smallest deployable unit.
+Pods can host one or more containers that share storage and networking."
+
+Chunk 2: "Pods can host one or more containers that share storage and networking.
+Deployments help manage Pods by scaling them up or down.
+Services expose Pods to external traffic."
+
+markdown
+Copy code
+- ✅ Preserves **meaning**  
+- ✅ Ensures **no lost context** at boundaries  
+- 🚀 Best retrieval accuracy in RAG
+
+---
+
+## 🎯 Conclusion
+The **Semantic + Overlap strategy** is typically the most effective for **improving retrieval accuracy in RAG systems**.  
+It combines **natural context segmentation** with **redundancy at chunk edges**, 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Solution 2 :  Metadata filtering = narrowing retrieval search by applying filters on document metadata (source, type, date, tags, etc.), 
+so the model only looks at the most relevant knowledge.
+📘 Real-World Example
+
+Imagine a company has:
+
+Internal HR policies (tag: HR)
+
+Technical product manuals (tag: TECH)
+
+Customer support FAQs (tag: SUPPORT)
+
+If a DevOps engineer asks about “scaling in Kubernetes”, you don’t want HR policies being searched. Metadata filtering ensures only TECH docs are considered.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+🔍 Query Enhancement in RAG
+📘 What it is
+
+Query Enhancement = Improving or transforming the user’s original query before running retrieval.
+The idea is to make the query more precise, descriptive, or semantically rich so that the retriever fetches better context chunks.
+📊 Example
+User query:
+
+"Pod scaling"
+
+Without Enhancement (retrieval might fail)
+
+Retrieves chunks about "pod" in biology, podcasts, etc.
+
+With Enhancement
+
+Enhanced query: "How do I scale a Kubernetes Deployment to increase the number of Pods in production cluster?"
+
+Retrieves chunks:
+
+"Deployments help you scale Pods up or down" ✅
+
+"Horizontal Pod Autoscaler automatically adjusts replicas" ✅
+-----------------------------------------------------------------------------------------------------------------------

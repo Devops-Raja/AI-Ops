@@ -1,0 +1,47 @@
+# 🤖 Qwen AI Agent
+
+Qwen is a **multi-purpose AI agent** designed for **coding, DevOps, and infrastructure automation**.  
+It integrates with modern protocols like **MCP (Model Context Protocol)** and supports specialized task-oriented agents.  
+
+---
+
+## 🚀 Key Features
+
+1. **Direct CLI Access**  
+   - Executes shell commands inside your environment.  
+   - Useful for DevOps workflows like deployments, monitoring, and troubleshooting.  
+
+2. **MCP Integration (Model Context Protocol)**  
+   - Securely connects Qwen with external systems (APIs, cloud services, databases).  
+   - Provides context-aware execution.  
+
+3. **Task-Specific Agents**  
+   - Switch between specialized agents:
+     - 🖥 **DevOps Agent** → CI/CD, Kubernetes, monitoring.  
+     - ⚙️ **Coding Agent** → Write, refactor, and debug code.  
+     - ☁️ **Cloud Agent** → AWS, GCP, Azure tasks.  
+
+4. **Adaptive Model Switching**  
+   - Dynamically selects between **lightweight** and **advanced** models based on task complexity.  
+
+---
+
+## 🛠 Example Workflows
+
+### 1. **DevOps Use Case**
+**Prompt:**  
+> "Check Kubernetes pod logs for `payment-service` in namespace `prod`."
+
+**Qwen Agent Output:**  
+```bash
+kubectl logs -n prod pod/payment-service-abc123
+
+
+
+Qwen is AI tool for learning how to integrate AI powered tools with infrastructure. 
+Qwen can easily be substituted with Claude Code, Gemini CLI, or any other CLI tools and frameworks available today.
+
+It is important to remember that using public AI APIs may not be the best use case in production, especially when security is of prime importance. 
+These tools are specifically selected for the lab to provide a great experience while you learn the underlying concepts while ensuring fair usage to competent models.
+
+
