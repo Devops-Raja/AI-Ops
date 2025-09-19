@@ -1,0 +1,31 @@
+📌 Issue
+
+✔️ Kubernetes pods failing with CrashLoopBackOff due to manifest misconfigurations
+
+✔️ Terraform drift detected between state file and actual cloud resources
+
+✔️ Resulted in production downtime and service unavailability
+
+🛠 Resolution Steps
+
+✔️ Installed & activated Plane MCP servers to integrate with ticketing tool
+
+✔️ Used Qwen AI to analyze tickets and generate fix recommendations
+
+✔️ Configured Kubernetes agent → fixed manifest issues causing pod failures
+
+✔️ Configured Cloud agent → reconciled infrastructure drift and restored state
+
+✔️ Redeployed workloads → resolved CrashLoopBackOff errors
+
+✔️ Recreated missing external resources → infrastructure made stateful again
+
+✅ Benefits
+
+✔️ Faster resolution — automated triage & fixes reduced downtime
+
+✔️ Cost savings — minimized manual intervention and outage impact
+
+✔️ Improved reliability — restored consistency between Kubernetes & Terraform
+
+✔️ Better reporting — all incidents tracked in the ticketing system
